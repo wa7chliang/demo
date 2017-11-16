@@ -1,14 +1,12 @@
-$.fn.switchObj = function (control, box, aClass) {
+$.fn.switchObj = function (control, box) {
     function switchBox(control, box) {
       this.control = control;
       this.box = box;
-      this.aClass = aClass;
     }
-    // 鼠标点击加类 / 去除类
-    switchBox.prototype.switchFunc = function () {
+    // 鼠标点击加类 / 去除类 控制盒子显示隐藏
+    switchBox.prototype.switchFunc = function (aClass) {
       var control = this.control;
       var box = this.box;
-      var aClass = this.aClass;
       $(this.control).click(function () {
         $(this).addClass(aClass).siblings(control).removeClass(aClass);
         $(box).eq($(this).data('num')).show().siblings(box).hide();
