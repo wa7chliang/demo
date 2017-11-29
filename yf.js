@@ -34,6 +34,16 @@ $.fn.switchObj = function (control, box) {
         })
       }
     }
+    // 兼容低版本的输入框提示效果
+    switchBox.prototype.inputTips = function () {
+      var control = this.control;
+      $(control).focus(function () {
+        if($(this).val() == this.defaultValue) $(this).val('')
+      })
+      $(control).blur(function () {
+        if($(this).val() == this.defaultValue || $(this).val() == '') $(this).val(this.defaultValue)
+      })
+    }
 
     return new switchBox(control, box);
   }
