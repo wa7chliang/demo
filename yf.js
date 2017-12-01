@@ -59,7 +59,7 @@ $.fn.switchObj = function (control, box) {
     // nav导航栏下拉效果
     switchBox.prototype.navShFunc = function () {
       var control = this.control;
-      $(contorl).hover(function () {
+      $(control).hover(function () {
         $(this).children('ul').slideDown();
       }, function () {
         $(this).children('ul').slideUp();            
