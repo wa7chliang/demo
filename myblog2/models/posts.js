@@ -67,6 +67,8 @@ module.exports = {
     return Post
       .find(query)
       .populate({ path: 'author', model: 'User' })
+      //.limit(5) //限制5篇,用于做分页
+      //.skip(5) //跳过5偏,用于做分页
       .sort({ _id: -1 })
       .addCreatedAt()
       .addCommentsCount()      
