@@ -107,10 +107,6 @@ function goTop(obj) {
     window.scrollTo(document.documentElement.scrollLeft, 0)
   }
 
-  goTopObj.prototype.reset = function () {
-    
-  }
-
   var goTop = new goTopObj(obj);
   return goTop;
 }
